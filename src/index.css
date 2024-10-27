@@ -1,13 +1,83 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 100vh; /* Mantém a altura da tela */
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.right {
+  flex: 1; /* O lado direito também ocupará o espaço disponível */
+  display: flex; /* Usar flexbox para centralizar o cartão */
+  align-items: center; /* Centralizar verticalmente */
+  justify-content: center; /* Centralizar horizontalmente */
 }
+
+.card {
+  background-color: #57beee;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin: 10px;
+  position: relative; /* Permite que os elementos internos sejam posicionados em relação ao cartão */
+  z-index: 1; /* Garante que o cartão fique acima da imagem de fundo */
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 'bold' ;
+}
+
+.card p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.card.redeemed {
+  background-color: #8df0a4;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6a994e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #426b42;
+}
+
+.animated {
+  animation: scaleUp 0.2s ease-in-out forwards; /* Animação de aumento */
+}
+
+.animated-out {
+  animation: scaleDown 0.2s ease-in-out forwards; /* Animação de diminuição */
+}
+
+/* Caso você ainda queira definir estilos específicos para h1, h2, etc. */
